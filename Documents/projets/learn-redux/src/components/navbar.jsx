@@ -1,10 +1,13 @@
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import {Link} from "react-router-dom"
 
 function NavBar(){
     return (
-        <div>
-            <Link to="accueil">Accueil</Link>
-            <Link to="Apropos">Apropos</Link>
+        <div style={{marginBottom:"2rem"}}>
+
+            
+            <Link to="/">Accueil</Link> <br />
+            <Link to="/Apropos">Apropos</Link>
+       
         </div>
     )
 }
