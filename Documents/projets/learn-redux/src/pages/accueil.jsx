@@ -13,11 +13,13 @@ function Accueil () {
     const  getData = async  () => {
         const newlist = await axios({
             method:"get",
+            url:"https://jsonplaceholder.typicode.com/posts",
             headers:{
                 "cache-control": 'max-age=43200', "content-type": 'application/json; charset=utf-8', expires: '-1', pragma: 'no-cache'
             }
         })
-        dispatch(pushList(newlist))
+        console.log(newlist.data);
+        dispatch(pushList(newlist.data))
     }
 
     return(
@@ -29,8 +31,8 @@ function Accueil () {
             <button onClick={getData}>push</button>
            <br />
            <ul>
-            {list?.map((data)=>{
-                return <li>data.title</li>
+            {list?.map((res)=>{
+                return <li>{res.title}</li>
             })}
            </ul>
             Accueil</div>

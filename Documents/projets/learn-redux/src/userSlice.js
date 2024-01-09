@@ -17,7 +17,7 @@ const userSlice = createSlice({
             state.value = "nom renitialise"
          },
          pushList : (state,action)=>{
-           state.list = state.list.push(action.payload)
+           state.list = action.payload
          }
     }
 })
